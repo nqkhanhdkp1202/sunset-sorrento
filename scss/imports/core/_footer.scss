@@ -1,0 +1,115 @@
+// css footer
+.footer {
+    background: $primary-bg;
+    .container {
+        padding: 90px 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gap-grid);
+        .footer__left {
+            grid-column: 1/4;
+            &-contact {
+                font-family: "ol";
+                font-size: 24px;
+                line-height: 40px;
+            }
+        }
+        .footer__mid {
+            grid-column: 5/9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .logo {
+            }
+            .quote {
+                text-align: center;
+                margin-top: 36px;
+                font-family: "ci";
+                font-size: 24px;
+                line-height: 40px;
+            }
+        }
+        .footer__right {
+            grid-column: 10/13;
+            transform: translateX(24px);
+            .--yellow-cl {
+                color: $yellow-cl;
+            }
+            p {
+                text-align: right;
+            }
+            &-contact {
+                font-family: "ol";
+                font-size: 24px;
+                line-height: 40px;
+            }
+            &-time {
+                margin-top: 24px;
+                font-family: "mr";
+                font-size: 16px;
+                line-height: 30px;
+                P {
+                    &:nth-child(2) {
+                        margin: 16px 0;
+                    }
+                }
+            }
+        }
+    }
+    .footer__copyright {
+        padding: 27px 0;
+        text-align: center;
+        background: $main-bg;
+        font-family: "mr";
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    i {
+        width: 40px;
+        height: 40px;
+        @include mid(true);
+    }
+    .text {
+        font-family: "mr";
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
+
+@include xs {
+    .footer {
+        .container {
+            display: flex;
+            flex-direction: column;
+            .footer__mid {
+                align-items: flex-start;
+                margin: 36px 0;
+                .quote {
+                    text-align: left;
+                }
+            }
+            .footer__right {
+                transform: translateX(0);
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .footer {
+        .container {
+            .footer__right {
+                transform: translateX(0);
+            }
+        }
+    }
+}

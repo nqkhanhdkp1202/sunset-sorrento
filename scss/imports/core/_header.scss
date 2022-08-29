@@ -1,0 +1,182 @@
+// css header
+.header {
+    height: var(--height-header);
+    background: $main-bg;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0;
+    .container-fluid {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn-mobile {
+            display: none;
+            width: 30px;
+            margin-left: 16px;
+            cursor: pointer;
+            .bar {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: $white-cl;
+                @include transition($t $cubic);
+                &:nth-child(1) {
+                    margin-bottom: 8px;
+                }
+                &:nth-child(3) {
+                    margin-top: 8px;
+                }
+            }
+        }
+        .logo {
+            margin-left: 30px;
+            width: 180px;
+            a {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .menu {
+            height: 100%;
+            @include mid(true);
+            @include mid();
+            &__item {
+                height: 100%;
+                @include mid(true);
+                &:not(:last-child) {
+                    margin-right: 24px;
+                }
+                a {
+                    text-decoration: none;
+                    color: $text-cl;
+                    font-size: 14px;
+                    font-family: "or";
+                    line-height: 20px;
+                    padding: 30% 0;
+                    &:hover {
+                        color: $yellow-cl;
+                        @include transition($t);
+                    }
+                }
+                &.active {
+                    a {
+                        color: $yellow-cl;
+                    }
+                }
+            }
+        }
+        .header__right {
+            display: flex;
+            align-items: center;
+            &-lang {
+                height: 100%;
+                position: relative;
+                .lang-current {
+                    text-decoration: none;
+                    color: $text-cl;
+                    font-size: 14px;
+                    font-family: "or";
+                    line-height: 20px;
+                    padding: 30% 0;
+                    margin-right: 40px;
+                    cursor: pointer;
+                    &:hover {
+                        color: $yellow-cl;
+                        @include transition($t);
+                    }
+                }
+                .dropdown {
+                    position: absolute;
+                    z-index: 150;
+                    bottom: -128px;
+                    left: -12px;
+                    background: $primary-bg;
+                    @include transition($t $cubic);
+                    opacity: 0;
+                    pointer-events: none;
+                    .lang-select {
+                        cursor: pointer;
+                        padding: 6px 24px;
+                        @include transition($t $cubic);
+                        &:hover {
+                            color: $yellow-cl;
+                        }
+                    }
+                    &.active {
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    .header {
+        .container-fluid {
+            .btn-mobile {
+                display: block;
+            }
+            .logo {
+                margin-left: 0px;
+                width: 25%;
+            }
+            .menu {
+                display: none;
+            }
+            .header__right {
+                &-lang {
+                    .lang-current {
+                        margin-right: 20px;
+                    }
+                    .dropdown {
+                        bottom: -129px;
+                        left: -32px;
+                    }
+                }
+                .btndat {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .header {
+        .container-fluid {
+            .btn-mobile {
+                display: block;
+            }
+            .logo {
+                margin-left: 0px;
+                width: 25%;
+            }
+            .menu {
+                display: none;
+            }
+            .header__right {
+                &-lang {
+                    .lang-current {
+                        margin-right: 20px;
+                    }
+                    .dropdown {
+                        bottom: -129px;
+                        left: -32px;
+                    }
+                }
+                .btndat {
+                    display: none;
+                }
+            }
+        }
+    }
+}

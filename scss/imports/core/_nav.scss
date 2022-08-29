@@ -1,0 +1,87 @@
+// css navigator (Menu)
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 500;
+    @include transition($t $cubic);
+    opacity: 0;
+    pointer-events: none;
+    .wrap {
+        width: 60%;
+        height: 100%;
+        padding: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: $primary-bg;
+        position: relative;
+        .logo {
+            width: 70%;
+        }
+        .nav__list {
+            width: 100%;
+            margin-top: 36px;
+            &-item {
+                width: 100%;
+                margin-bottom: 30px;
+                a {
+                    padding: 20px 50px 20px 10px;
+
+                    color: $white-cl;
+                    font-family: "ol";
+                    text-decoration: none;
+                    font-size: 20px;
+                    @include transition($t $cubic);
+                    &:hover {
+                        color: $yellow-cl;
+                    }
+                }
+            }
+        }
+        .btnclose {
+            position: absolute;
+            top: 24px;
+            right: 16px;
+            cursor: pointer;
+        }
+    }
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    &.active .nav__list {
+        animation-name: upelement;
+        animation-duration: 1s;
+    }
+}
+
+@keyframes upelement {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@include xs {
+    .nav {
+        .wrap {
+            .nav__list {
+                &-item {
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

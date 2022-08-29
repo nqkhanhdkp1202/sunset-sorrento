@@ -1,0 +1,119 @@
+.menupage {
+    .schero {
+        background: url(../img/menu/hero.jpg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .scmenu {
+        background: $main-bg;
+        padding: 120px 0;
+        .scmenu__list {
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: var(--gap-grid);
+            &-item {
+                position: relative;
+                .overlay {
+                    background: $main-bg;
+                    width: 90%;
+                    height: 86%;
+                    padding: 36px 24px;
+                    @include mid;
+                    z-index: 500;
+                    opacity: 0;
+                    pointer-events: none;
+                    @include transition($t $cubic);
+                    .row {
+                        margin-bottom: 36px;
+                    }
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 95%;
+                        height: 105%;
+                        border: 1px solid $yellow-cl;
+                        @include mid;
+                    }
+                }
+                .heading {
+                    @include mid;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .name {
+                        width: max-content;
+                        font-family: "csbi";
+                        font-size: 72px;
+                        margin-bottom: 50px;
+                    }
+                    .under {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .line {
+                            margin: 0 4px;
+                            width: 20%;
+                        }
+                    }
+                }
+                &:hover {
+                    .overlay {
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+        .btnmenu {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 64px;
+            a {
+                text-transform: none;
+            }
+        }
+    }
+}
+
+@include xs {
+    .menupage {
+        .scmenu {
+            .scmenu__list {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                &-item {
+                    margin-bottom: 24px;
+                    .heading {
+                        .name {
+                            font-size: 42px;
+                        }
+                    }
+                    .overlay {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .menupage {
+        .scmenu {
+            .scmenu__list {
+                &-item {
+                    margin-bottom: 24px;
+                    .heading {
+                        .name {
+                            font-size: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

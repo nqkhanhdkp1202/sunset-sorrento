@@ -1,0 +1,167 @@
+.contactpage {
+    .schero {
+        background: url(../img/contact/hero.jpg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .sccontact {
+        background: $main-bg;
+        padding: 120px 0;
+        .container {
+            display: flex;
+            .form {
+                display: flex;
+                gap: 0;
+                justify-content: center;
+                margin-top: 64px;
+                &-input {
+                    margin-left: 0;
+                }
+            }
+            .sccontact__content {
+                margin-left: 48px;
+                .under {
+                    margin-top: 24px;
+                }
+                .desc {
+                    margin-top: 24px;
+                    font-family: "mr";
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    .scmap {
+        background: $main-bg;
+        padding-bottom: 135px;
+        .container {
+            .scmap__photo {
+                height: 600px;
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .scproduct {
+        background: $main-bg;
+        padding-bottom: 180px;
+        .container-fluid {
+            .scproduct__list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    .photo {
+                        width: 124px;
+                        height: 124px;
+                        flex-shrink: 0;
+                        display: flex;
+                        justify-content: center;
+                        margin-right: 24px;
+                        img {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+                    &:not(:last-child) {
+                        margin-right: 16px;
+                    }
+                    .content {
+                        .name {
+                            font-family: "ol";
+                            font-size: 24px;
+                            line-height: 40px;
+                        }
+                        .desc {
+                            margin-top: 12px;
+                            font-family: "mr";
+                            font-size: 16px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    .contactpage {
+        .sccontact {
+            .container {
+                display: flex;
+                flex-direction: column;
+                .form {
+                    &-beside {
+                        display: none;
+                    }
+                    margin-bottom: 24px;
+                }
+                .sccontact__content {
+                    margin: 0;
+                }
+            }
+        }
+
+        .scproduct {
+            .container-fluid {
+                .scproduct__list {
+                    flex-direction: column;
+                    &-item {
+                        flex-direction: column;
+                        text-align: center;
+                        margin-bottom: 16px;
+                        .photo {
+                            margin-right: 0;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    .contactpage {
+        .sccontact {
+            .container {
+                display: flex;
+                flex-direction: column;
+                .form {
+                    &-beside {
+                        display: none;
+                    }
+                    margin-bottom: 24px;
+                }
+                .sccontact__content {
+                    margin: 0;
+                }
+            }
+        }
+
+        .scproduct {
+            .container-fluid {
+                .scproduct__list {
+                    flex-direction: column;
+                    &-item {
+                        flex-direction: column;
+                        text-align: center;
+                        margin-bottom: 16px;
+                        .photo {
+                            margin-right: 0;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
