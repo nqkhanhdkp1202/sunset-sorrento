@@ -13,13 +13,11 @@
             grid-template-columns: repeat(12, 1fr);
             gap: 24px;
             .scres__photo {
-                height: 0;
-                padding-bottom: 693px;
-                overflow: hidden;
-                position: relative;
                 grid-column: 1/8;
                 img {
-                    @include midimg;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
                 }
             }
             .scres__content {
@@ -98,12 +96,10 @@
         padding-bottom: 135px;
         .container {
             .scmap__photo {
-                height: 0;
-                padding-bottom: 600px;
-                overflow: hidden;
-                position: relative;
                 img {
-                    @include midimg;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
                 }
             }
         }
