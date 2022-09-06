@@ -9,7 +9,7 @@ function handleSliderScroll() {
         wrapAround: true,
         pageDots: false,
         autoPlay: 2000,
-        pauseAutoPlayOnHover: true,
+        pauseAutoPlayOnHover: false,
         fade: true
     });
     const prev = document.querySelector('.homepage .--prev')

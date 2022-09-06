@@ -60,9 +60,9 @@
                     font-family: "or";
                     line-height: 20px;
                     padding: 30% 0;
+                    @include transition($t);
                     &:hover {
                         color: $yellow-cl;
-                        @include transition($t);
                     }
                 }
                 &.active {
@@ -87,9 +87,9 @@
                     padding: 30% 0;
                     margin-right: 40px;
                     cursor: pointer;
+                    @include transition($t);
                     &:hover {
                         color: $yellow-cl;
-                        @include transition($t);
                     }
                 }
                 .dropdown {

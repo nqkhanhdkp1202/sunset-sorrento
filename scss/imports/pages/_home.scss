@@ -21,7 +21,7 @@
                     align-items: center;
                     width: max-content;
                     .thumb {
-                        margin-bottom: 90px;
+                        margin-bottom: 5%;
                     }
                     .title {
                         font-family: "csbi";
@@ -328,6 +328,7 @@
             padding-top: 60px;
             padding-bottom: 120px;
             position: relative;
+
             &-item {
                 @include transition($t $cubic);
                 display: flex;
@@ -397,6 +398,7 @@
                         img {
                             width: auto;
                             height: 100%;
+                            @include transition($t $cubic);
                         }
                         &:hover {
                             img {

@@ -42,15 +42,15 @@ body {
             flex-direction: column;
             align-items: center;
             .circle {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
                 -webkit-animation: spin 6s linear infinite; /* Safari */
                 animation: spin 6s linear infinite;
             }
             .progress {
                 margin-top: 56px;
                 display: block;
-                width: 40%;
+                width: 35%;
                 height: 6px;
                 border: 1px solid $yellow-cl;
                 position: relative;
