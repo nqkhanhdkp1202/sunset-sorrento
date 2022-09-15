@@ -31,11 +31,10 @@
                 margin-bottom: 30px;
                 a {
                     padding: 20px 50px 20px 10px;
-
                     color: $white-cl;
                     font-family: "ol";
                     text-decoration: none;
-                    font-size: 20px;
+                    font-size: 16px;
                     @include transition($t $cubic);
                     &:hover {
                         color: $yellow-cl;
@@ -69,19 +68,5 @@
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@include xs {
-    .nav {
-        .wrap {
-            .nav__list {
-                &-item {
-                    a {
-                        font-size: 12px;
-                    }
-                }
-            }
-        }
     }
 }

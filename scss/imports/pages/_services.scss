@@ -17,10 +17,10 @@
             }
             margin-top: 80px;
             position: relative;
-            height: 450px;
+            height: 72vh;
             &-item {
-                margin-right: 54px;
-                width: 690px;
+                margin-right: 5vw;
+                width: 52vw;
                 height: 100%;
                 position: absolute;
                 overflow: hidden;
@@ -36,6 +36,7 @@
                 }
                 .photo {
                     img {
+                        @include midimg;
                         width: 100%;
                         height: auto;
                         object-fit: cover;
@@ -151,7 +152,7 @@
 
     .scprice {
         background: $third-bg;
-        padding: 164px 0 420px 0;
+        padding-top: 120px;
         position: relative;
         &__heading {
             position: relative;
@@ -171,13 +172,10 @@
             }
         }
         &__list {
-            position: absolute;
-            bottom: -330px;
             display: flex;
             align-items: center;
             justify-content: center;
-            left: 50%;
-            transform: translateX(-50%);
+            transform: translateY(24%);
             &-item {
                 background: $main-bg;
                 position: relative;
@@ -246,7 +244,7 @@
 
     .scphilosophy {
         background: $main-bg;
-        padding: 400px 0 120px 0;
+        padding: 200px 0 120px 0;
         .container-fluid {
             display: flex;
             .scphilosophy__content {
@@ -281,60 +279,76 @@
 }
 
 @include xs {
-    .traveldetailpage {
-        .schero {
-            .container {
-                .schero__breadcrumb {
-                    align-items: flex-start;
-                    flex-direction: column;
-                    .dot {
-                        display: none;
+    .servicespage {
+        .scservices {
+            .scservices__slide {
+                &-item {
+                    .content {
+                        p {
+                            font-size: 24px;
+                        }
                     }
                 }
             }
         }
-        .scdetail {
-            padding: 120px 0;
+        .scbenefit {
             .container {
-                padding: 0 15px;
-                .scdetail__article {
-                    .photo {
-                        margin-bottom: 84px;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
+                .scbenefit__top {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &-right {
+                        .overlay {
+                            .title {
+                                font-size: 60px;
+                            }
+                        }
+                        .sign {
+                            display: none;
                         }
                     }
                 }
-                .social {
-                    .bottom {
+                .scbenefit__bottom {
+                    margin-top: 100px;
+                    &-list {
                         flex-direction: column;
-                        align-items: flex-start;
-                        .thumb {
-                            &:not(:last-child) {
-                                margin-bottom: 24px;
-                            }
-                            &:last-child {
-                                flex-direction: row;
-                                .content {
-                                    margin-right: 0;
-                                    margin-left: 16px;
-                                }
+                        .item {
+                            &:not(.item:last-child) {
+                                margin-bottom: 60px;
                             }
                         }
                     }
-                    .other {
-                        &__list {
-                            flex-direction: column;
-                            .article {
-                                &:first-child {
-                                    margin: 0;
-                                    margin-bottom: 32px;
-                                }
-                            }
-                        }
+                }
+            }
+        }
+        .scprice {
+            &__heading {
+                .text-bg {
+                    font-size: 160px;
+                }
+            }
+            &__list {
+                flex-direction: column;
+                transform: translateY(8%);
+                &-item {
+                    .content {
+                        padding: 20px 30px;
                     }
+                    .circle {
+                        display: none;
+                    }
+                    &:not(:last-child) {
+                        margin-right: 0px;
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+        .scphilosophy {
+            .container-fluid {
+                flex-direction: column;
+                .scphilosophy__content {
+                    margin: 32px 0;
                 }
             }
         }
@@ -342,60 +356,68 @@
 }
 
 @include sm {
-    .traveldetailpage {
-        .schero {
-            .container {
-                .schero__breadcrumb {
-                    align-items: flex-start;
-                    flex-direction: column;
-                    .dot {
-                        display: none;
+    .servicespage {
+        .scservices {
+            .scservices__slide {
+                &-item {
+                    .content {
+                        p {
+                            font-size: 24px;
+                        }
                     }
                 }
             }
         }
-        .scdetail {
-            padding: 120px 0;
+        .scbenefit {
             .container {
-                padding: 0 15px;
-                .scdetail__article {
-                    .photo {
-                        margin-bottom: 84px;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
+                .scbenefit__top {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &-right {
+                        .sign {
+                            display: none;
                         }
                     }
                 }
-                .social {
-                    .bottom {
+                .scbenefit__bottom {
+                    margin-top: 100px;
+                    &-list {
                         flex-direction: column;
-                        align-items: flex-start;
-                        .thumb {
-                            &:not(:last-child) {
-                                margin-bottom: 24px;
-                            }
-                            &:last-child {
-                                flex-direction: row;
-                                .content {
-                                    margin-right: 0;
-                                    margin-left: 16px;
-                                }
+                        .item {
+                            &:not(.item:last-child) {
+                                margin-bottom: 60px;
                             }
                         }
                     }
-                    .other {
-                        &__list {
-                            flex-direction: column;
-                            .article {
-                                &:first-child {
-                                    margin: 0;
-                                    margin-bottom: 32px;
-                                }
-                            }
-                        }
+                }
+            }
+        }
+        .scprice {
+            &__heading {
+                .text-bg {
+                    font-size: 160px;
+                }
+            }
+            &__list {
+                flex-direction: column;
+                transform: translateY(8%);
+                &-item {
+                    .content {
+                        padding: 20px 30px;
                     }
+                    &:not(:last-child) {
+                        margin-right: 0px;
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+        .scphilosophy {
+            .container-fluid {
+                flex-direction: column;
+                .scphilosophy__content {
+                    margin: 32px 0;
                 }
             }
         }
